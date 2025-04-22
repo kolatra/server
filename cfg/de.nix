@@ -1,4 +1,4 @@
-{ cfg, imports, ... }:
+{ config, pkgs, ... }:
 
 {
   services.xserver.enable = true;
