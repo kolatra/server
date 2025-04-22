@@ -9,6 +9,7 @@
     [
       ./hardware-configuration.nix
       ./users.nix
+      ./ssh.nix
     ];
 
   system.stateVersion = "24.11";
@@ -60,15 +61,6 @@
     enableSSHSupport = true;
   };
 
-  services.openssh = {
-	enable = true;
-	settings = {
-		X11Forwarding = true;
-		PermitRootLogin = "no";
-		PasswordAuthentication = false;
-	};
-	openFirewall = true;
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
