@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./users.nix
       ./ssh.nix
+      ./de.nix
     ];
 
   system.stateVersion = "24.11";
