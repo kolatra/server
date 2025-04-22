@@ -18,8 +18,8 @@
     };
 
     home = {
-	username = "host";
-	homeDirectory = "/home/host";
+	username = "tyler";
+	homeDirectory = "/home/tyler";
     };
 
     programs.neovim.enable = true;
