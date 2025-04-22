@@ -7,19 +7,19 @@
 }: {
     # import other home-manager modules here
     imports = [
-	# you can split up the config and import its parts here:
-	# ./nvim.nix
+        # you can split up the config and import its parts here:
+        # ./nvim.nix
     ];
 
     config = {
-	allowUnfree = true;
-	# https://github.com/nix-community/home-manager/issues/2942
-	allowUnfreePredicate = _: true;
+        allowUnfree = true;
+        # https://github.com/nix-community/home-manager/issues/2942
+        allowUnfreePredicate = _: true;
     };
 
     home = {
-	username = "tyler";
-	homeDirectory = "/home/tyler";
+        username = "tyler";
+        homeDirectory = "/home/tyler";
     };
 
     programs.neovim.enable = true;
@@ -30,5 +30,5 @@
 
     systemd.user.startServices = "sd-switch";
 
-    home.stateVersion = "24.12"
+    home.stateVersion = "24.11"
 }
