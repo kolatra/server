@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ...}:
 
 let 
+  inherit (lib) concatStringsSep;
   jre21 = pkgs.temurin-bin-21;
 
   # "Borrowed" from AllTheMods Discord
