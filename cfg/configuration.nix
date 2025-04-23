@@ -11,6 +11,7 @@
       ./users.nix
       ./ssh.nix
       ./de.nix
+      ./minecraft.nix
     ];
 
   system.stateVersion = "24.11";
@@ -61,7 +62,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
