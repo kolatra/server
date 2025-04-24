@@ -21,15 +21,13 @@
             modules = [
                 ./cfg/configuration.nix
                 agenix.nixosModules.default
-            ];
-        };
-    };
 
-    homeConfigurations = {
-        "tyler@titan" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            extraSpecialArgs = {inherit inputs outputs;};
-            modules = [./home-manager/home.nix];
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.tyler = import ./home-manager/home.nix;
+                }
+            ];
         };
     };
   };

@@ -1,6 +1,5 @@
 {
     inputs,
-    lib,
     config,
     pkgs,
     ...
@@ -8,12 +7,6 @@
     imports = [
 
     ];
-
-    config = {
-        allowUnfree = true;
-        # https://github.com/nix-community/home-manager/issues/2942
-        allowUnfreePredicate = _: true;
-    };
 
     home = {
         username = "tyler";
@@ -26,11 +19,11 @@
     ];
 
     home.file.".zshrc" = {
-        source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dotfiles/.zshrc";
+        source = config.lib.file.mkOutOfStoreSymlink "/home/tyler/config/dotfiles/.zshrc";
     };
 
     home.file.".config/nvim" = {
-        source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dotfiles/kickstart.nvim";
+        source = config.lib.file.mkOutOfStoreSymlink "/home/tyler/config/dotfiles/kickstart.nvim";
     };
 
     # not sure yet if I need this
@@ -47,10 +40,10 @@
     programs.git = {
         enable = true;
         userName = "tyler";
-        userEmail = "3821892+kolatra@users.noreply.github.com"
+        userEmail = "3821892+kolatra@users.noreply.github.com";
     };
 
     systemd.user.startServices = "sd-switch";
 
-    home.stateVersion = "24.11"
+    home.stateVersion = "24.11";
 }

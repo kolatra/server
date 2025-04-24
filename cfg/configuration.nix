@@ -46,6 +46,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # https://github.com/nix-community/home-manager/issues/2942
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
   environment.systemPackages = with pkgs; [
      git
