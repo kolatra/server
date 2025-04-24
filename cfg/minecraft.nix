@@ -15,18 +15,20 @@ in {
   services.modded-minecraft-servers = {
     eula = true;
 
-    gtnh = {
-      enable = true;
-      jvmMaxAllocation = "8G";
-      jvmInitialAllocation = "8G";
-      jvmPackage = jre21;
+    instances = {
+      gtnh = {
+        enable = true;
+        jvmMaxAllocation = "8G";
+        jvmInitialAllocation = "8G";
+        jvmPackage = jre21;
 
-      serverConfig = 
-        defaults
-          // {
-          server-port = 25565;
-          motd = "GregTech: New Horizons 2.7";
-        };
+        serverConfig = 
+          defaults
+            // {
+            server-port = 25565;
+            motd = "GregTech: New Horizons 2.7";
+          };
+      };
     };
   };
 }
