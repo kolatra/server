@@ -6,4 +6,5 @@ wget -O /tmp/archive.zip "$URL"
 mkdir ./gt
 unzip /tmp/archive.zip -d ./gt
 mv ./gt/startserver-java9.sh ./gt/start.sh
+chmod +x ./gt/start.sh
 sudo mv ./gt/* /var/lib/mc-gtnh
