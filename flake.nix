@@ -8,14 +8,20 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
+
+    # for handling secrets
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let inherit (self) outputs; in {
+  outputs = { self, nixpkgs, home-manager, mms, agenix, ... }@inputs: let inherit (self) outputs; in {
     nixosConfigurations = {
         titan = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = {inherit inputs outputs;};
-            modules = [./cfg/configuration.nix];
+            modules = [
+                ./cfg/configuration.nix
+                agenix.nixosModules.default
+            ];
         };
     };
 

@@ -12,7 +12,10 @@
       ./ssh.nix
       ./de.nix
       ./minecraft.nix
+      ./restic.nix
     ];
+
+  age.identityPaths = [ "/home/tyler/.ssh/id_rsa" ];
 
   system.stateVersion = "24.11";
 
