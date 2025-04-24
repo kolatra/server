@@ -46,10 +46,10 @@ alias refresh="source ~/.zshrc && echo 'Reloaded'"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
-alias cat="bat --decorations never"
+alias cat="bat --paging=never"
 alias rmd="rm -rf"
 
-if is_command_present exa; then
+if is_command_present eza; then
   alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
   alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
 else
