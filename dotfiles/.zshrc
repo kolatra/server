@@ -35,17 +35,21 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 alias vim="nvim"
+alias vimconfig="vim ~/.config/nvim"
+alias svim="sudo vim"
+
 alias refresh="source ~/.zshrc && echo 'Reloaded'"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias vimconfig="nvim ~/.config/nvim"
-alias exa='eza' # no more typo
-alias ls='exa -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons'
-alias lsm='exa -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons'
-alias .='ls'
-# alias ls='ls -Failh'
-alias df='df -h'
-alias du='du -ch'
+
+alias cat="bat --decorations never"
+alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
+alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
+alias .="ls"
+# alias ls="ls -Failh"
+
+alias df="df -h"
+alias du="du -ch"
 
 export PATH="/home/tyler/.local/bin:$PATH"
 

@@ -5,10 +5,8 @@
     pkgs,
     ...
 }: {
-    # import other home-manager modules here
     imports = [
-        # you can split up the config and import its parts here:
-        # ./nvim.nix
+
     ];
 
     config = {
@@ -23,10 +21,34 @@
     };
 
     programs.neovim.enable = true;
-    home.packages = with pkgs; [];
+    home.packages = with pkgs; [
+        zsh
+    ];
+
+    home.file.".zshrc" = {
+        source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dotfiles/.zshrc";
+    };
+
+    home.file.".config/nvim" = {
+        source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dotfiles/kickstart.nvim";
+    };
+
+    # not sure yet if I need this
+    # xdg.configFile = {
+    #   "zsh" = {
+    #     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/zsh";
+    #     recursive = true;
+    #   };
+    #   # ...
+    # };
 
     programs.home-manager.enable = true;
-    programs.git.enable = true;
+
+    programs.git = {
+        enable = true;
+        userName = "tyler";
+        userEmail = "3821892+kolatra@users.noreply.github.com"
+    };
 
     systemd.user.startServices = "sd-switch";
 
