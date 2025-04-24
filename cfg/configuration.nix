@@ -51,6 +51,8 @@
 
   environment.systemPackages = with pkgs; [
      git
+     zsh
+     oh-my-zsh
      btop
      gnumake
      gcc
@@ -67,6 +69,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.zsh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
