@@ -1,3 +1,7 @@
+is_command_present() {
+  command -v "$1" > /dev/null 2>&1
+}
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="aphrodite/aphrodite"
@@ -18,8 +22,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
-	git
-	zsh-autosuggestions
+  git
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -43,10 +47,16 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias cat="bat --decorations never"
-alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
-alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
+alias rmd="rm -rf"
+
+if is_command_present exa; then
+  alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
+  alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
+else
+  alias ls="ls -Failh"
+fi
+
 alias .="ls"
-# alias ls="ls -Failh"
 
 alias df="df -h"
 alias du="du -ch"
