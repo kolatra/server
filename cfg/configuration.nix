@@ -71,6 +71,14 @@
   };
 
   programs.zsh.enable = true;
+  programs.zsh.ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+          "sudo"
+      ];
+  };
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

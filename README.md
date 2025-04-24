@@ -8,4 +8,7 @@ This repository hosts the config files for my home-server. `./dotfiles/` contain
 - Samba Shares
 - GTNH Server
 - Automated Restic Backups
+- Age Encrypted Secrets
 - ...
+
+The secrets in this repo decrypt to the string `"asd`"

@@ -19,24 +19,16 @@
         oh-my-zsh
     ];
 
-    programs.zsh = {
-        enable = true;
-
-        oh-my-zsh = {
-            enable = true;
-            theme = "robbyrussell";
-            plugins = [
-                "sudo"
-            ];
-        };
-    };
-
     home.file.".zshrc" = {
         source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/config/dotfiles/.zshrc";
     };
 
     home.file.".config/nvim" = {
         source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/config/dotfiles/kickstart.nvim";
+    };
+
+    home.file.".oh-my-zsh" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/config/dotfiles/oh-my-zsh";
     };
 
     # not sure yet if I need this
