@@ -12,6 +12,7 @@
       ./ssh.nix
       ./de.nix
       ./minecraft.nix
+      ./samba.nix
       ./restic.nix
     ];
 
@@ -61,6 +62,7 @@
      fastfetch
      just
      unzip
+     bat
   ];
 
   environment.variables.EDITOR = "nvim";

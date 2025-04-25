@@ -15,19 +15,21 @@
         "map to guest" = "bad user";
       };
       "tyler" = {
-        "path" = "/home/tyler"
+        "path" = "/home/tyler";
         "browseable" = "yes";
         "guest ok" = "no";
         "force user" = "tyler";
       };
       "tyler-hdd" = {
-        "path" = "/hdd"
+        "path" = "/hdd";
         "browseable" = "yes";
         "guest ok" = "no";
         "force user" = "tyler";
       };
     };
   };
+
+  services.samba.smbd.enable = true;
 
   services.samba-wsdd = {
     enable = true;
