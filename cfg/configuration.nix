@@ -60,6 +60,7 @@
      wget
      fastfetch
      just
+     unzip
   ];
 
   environment.variables.EDITOR = "nvim";
