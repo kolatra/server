@@ -10,3 +10,4 @@ chmod a+x ./gt/start.sh
 sudo mv ./gt/* /var/lib/mc-gtnh
 sudo chown -R mc-gtnh:mc-gtnh /var/lib/mc-gtnh
 sudo ln -s /run/current-system/sw/bin/zsh /bin/bash
+rm -rf ./gt
