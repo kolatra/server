@@ -7,6 +7,7 @@ rm -f ./cfg/hardware-configuration.nix
 sudo nixos-generate-config
 sudo mv /etc/nixos/hardware-configuration.nix ~/config/cfg/
 sudo chown tyler:users ./cfg/hardware-configuration.nix
+git add ./cfg/hardware-configuration.nix
 
 sudo nixos-rebuild switch --flake .#titan
 
