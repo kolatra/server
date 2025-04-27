@@ -46,7 +46,6 @@ alias refresh="source ~/.zshrc && echo 'Reloaded'"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
-alias cat="bat --paging=never"
 alias rmd="rm -rf"
 
 if is_command_present eza; then
@@ -54,6 +53,11 @@ if is_command_present eza; then
   alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
 else
   alias ls="ls -Failh"
+fi
+
+if is_command_present bat; then
+  alias cat="bat"
+  alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 fi
 
 alias .="ls"
