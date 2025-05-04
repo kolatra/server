@@ -23,6 +23,7 @@
       "tyler-hdd" = {
         "path" = "/hdd";
         "browseable" = "yes";
+        "writeable" = "yes";
         "guest ok" = "no";
         "force user" = "tyler";
       };

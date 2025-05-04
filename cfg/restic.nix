@@ -17,7 +17,13 @@
 
       # adjust these as needed
       paths = [
-        "/home/tyler/Documents"
+        "/home"
+        "/hdd/backups/"
+        "/hdd/isos"
+        "/hdd/home-backup"
+        "/hdd/photos"
+        "/hdd/wendy-photos"
+        "/hdd/misc"
       ];
 
       pruneOpts = [
