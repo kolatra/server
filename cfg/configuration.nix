@@ -14,6 +14,7 @@
       ./minecraft.nix
       ./samba.nix
       ./restic.nix
+      ./pihole.nix
     ];
 
   age.identityPaths = [ "/home/tyler/.ssh/id_titan" ];
