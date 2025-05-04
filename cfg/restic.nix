@@ -20,6 +20,8 @@
         "/home"
         "/hdd/backups/"
         "/hdd/isos"
+        "/hdd/gtnh-world/"
+        "/hdd/home-folder"
         "/hdd/home-backup"
         "/hdd/photos"
         "/hdd/wendy-photos"
