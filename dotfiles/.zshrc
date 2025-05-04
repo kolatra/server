@@ -4,7 +4,7 @@ is_command_present() {
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="aphrodite/aphrodite"
+ZSH_THEME="candy"
 
 HYPHEN_INSENSITIVE="true"
 
@@ -24,6 +24,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   git
   zsh-autosuggestions
+  docker
+  docker-compose
+  # dotenv
+  history
+  ubuntu
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -38,15 +43,22 @@ export EDITOR='nvim'
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
+# vim aliases
 alias vim="nvim"
 alias vimconfig="vim ~/.config/nvim"
 alias svim="sudo vim"
 
+# editing zsh
 alias refresh="source ~/.zshrc && echo 'Reloaded'"
-alias zshconfig="vim ~/.zshrc"
+alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+# commands with common args
 alias rmd="rm -rf"
+alias df="df -h"
+alias du="du -ch"
+alias cat="bat"
+alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 
 if is_command_present eza; then
   alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
@@ -55,18 +67,17 @@ else
   alias ls="ls -Failh"
 fi
 
-if is_command_present bat; then
-  alias cat="bat"
-  alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
-fi
-
 alias .="ls"
-
-alias df="df -h"
-alias du="du -ch"
+alias l="ls"
 
 export PATH="/home/tyler/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# i don't know if this is the best
+# way to do this
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_github
+
