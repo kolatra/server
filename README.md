@@ -11,4 +11,3 @@ This repository hosts the config files for my home-server. `./dotfiles/` contain
 - Age Encrypted Secrets
 - ...
 
-The secrets in this repo decrypt to the string `"asd"`
