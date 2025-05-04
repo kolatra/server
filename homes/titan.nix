@@ -1,16 +1,13 @@
-{
-    inputs,
-    config,
-    pkgs,
-    ...
-}: let user = "tyler"; in {
+{ inputs, config, pkgs, ... }: 
+let user = "tyler"; 
+in {
     imports = [
 
     ];
 
     home = {
         username = "${user}";
-        homeDirectory = "/home/tyler";
+        homeDirectory = "/home/${user}";
     };
 
     programs.neovim.enable = true;

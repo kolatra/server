@@ -25,11 +25,29 @@
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
-                    home-manager.users.tyler = import ./home-manager/home.nix;
+                    home-manager.users.tyler = import ./homes/titan.nix;
                     home-manager.sharedModules = [
 
                     ];
-                }
+                };
+            ];
+        };
+
+        pandora = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {inherit inputs outputs;};
+            modules = [
+                ./wsl/configuration.nix
+                agenix.nixosModules.default
+
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.tyler = import ./homes/pandora.nix;
+                    home-manager.sharedModules = [
+
+                    ];
+                };
             ];
         };
     };
