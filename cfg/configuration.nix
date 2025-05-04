@@ -16,7 +16,7 @@
       ./restic.nix
     ];
 
-  age.identityPaths = [ "/home/tyler/.ssh/id_rsa" ];
+  age.identityPaths = [ "/home/tyler/.ssh/id_titan" ];
 
   system.stateVersion = "24.11";
 

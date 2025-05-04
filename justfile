@@ -1,4 +1,5 @@
 set shell := ["zsh", "-uc"]
+set unstable
 
 rebuild:
     sudo nixos-rebuild switch --flake .#titan
