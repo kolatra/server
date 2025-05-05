@@ -29,7 +29,7 @@
                     home-manager.sharedModules = [
 
                     ];
-                };
+                }
             ];
         };
     };
