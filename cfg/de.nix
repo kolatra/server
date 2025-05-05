@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver = {
-    enable = true;
-
+  services = {
     displayManager = {
       # lightdm.enable = true;
       sddm.enable = true;
