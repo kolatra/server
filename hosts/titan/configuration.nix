@@ -55,6 +55,7 @@
      git
      zsh
      oh-my-zsh
+     zsh-autosuggestions
      btop
      gnumake
      gcc

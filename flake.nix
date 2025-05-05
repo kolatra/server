@@ -19,13 +19,31 @@
             system = "x86_64-linux";
             specialArgs = {inherit inputs outputs;};
             modules = [
-                ./cfg/configuration.nix
+                ./hosts/titan/configuration.nix
                 agenix.nixosModules.default
 
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
-                    home-manager.users.tyler = import ./homes/titan.nix;
+                    home-manager.users.tyler = import ./hosts/titan/home.nix;
+                    home-manager.sharedModules = [
+
+                    ];
+                }
+            ];
+        };
+
+        tethys = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {inherit inputs outputs;};
+            modules = [
+                ./hosts/tethys/configuration.nix
+                agenix.nixosModules.default
+
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.tyler = import ./hosts/tethys/home.nix;
                     home-manager.sharedModules = [
 
                     ];

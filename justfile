@@ -7,13 +7,13 @@ rebuild:
 submodules:
     git submodule update --init --recursive
 
-setup:
-    rm -f ./cfg/hardware-configuration.nix
+setup-titan:
+    rm -f ./hosts/titan/hardware-configuration.nix
     sudo nixos-generate-config
-    sudo mv /etc/nixos/hardware-configuration.nix ~/config/cfg/
-    sudo chown tyler:users ./cfg/hardware-configuration.nix
+    sudo mv /etc/nixos/hardware-configuration.nix ./hosts/titan/
+    sudo chown tyler:users ./hosts/titan/hardware-configuration.nix
     # so that the rebuild acknowledges the file
-    git add ./cfg/hardware-configuration.nix
+    git add ./hosts/titan/hardware-configuration.nix
 
     just rebuild
     just setup-gtnh
