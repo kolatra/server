@@ -85,10 +85,19 @@
   };
 
   services.tailscale.enable = true;
+  services.nginx = {
+      enable = true;
+      user = "tyler";
+      group = "users";
+
+      virtualHosts."artalok.io" = {
+          root = "/var/www/site";
+      };
+  };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedUDPPorts = [ 80 ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
