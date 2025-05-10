@@ -19,11 +19,12 @@ in {
 
         serverConfig = {
             server-port = 25565;
-            motd = "GregTech: New Horizons 2.7.2";
+            motd = "GregTech: New Horizons 2.7.4";
             white-list = true;
             spawn-protection = 0;
             max-tick-time = 5 * 60 * 1000;
             allow-flight = true;
+            view-distance = 16;
         };
       };
 
