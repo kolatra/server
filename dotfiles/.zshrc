@@ -60,6 +60,8 @@ alias du="du -ch"
 alias cat="bat"
 alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 
+alias fetch="python ~/.dotfiles/fetch.py"
+
 if is_command_present eza; then
   alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
   alias lsm="eza -lh --all --group-directories-first --sort=mod --time-style=long-iso --git --icons"
@@ -76,8 +78,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# i don't know if this is the best
-# way to do this
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_github
+eval $(ssh-agent -s) &> /dev/null
+ssh-add ~/.ssh/id_github &> /dev/null
 
+fetch
