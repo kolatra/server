@@ -2,7 +2,7 @@ import random
 import os
 
 def main():
-    filename = './logos'
+    filename = '/home/tyler/.dotfiles/logos'
     with open(filename, 'r') as file:
         lines = [line.rstrip() for line in file]
 
