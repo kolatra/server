@@ -7,6 +7,9 @@ rebuild:
 submodules:
     git submodule update --init --recursive
 
+gc:
+    sudo nix-collect-garbage -d && nix-collect-garbage -d
+
 setup:
     rm -f ./cfg/hardware-configuration.nix
     sudo nixos-generate-config
