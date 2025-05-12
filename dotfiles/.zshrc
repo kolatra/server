@@ -60,7 +60,7 @@ alias du="du -ch"
 alias cat="bat"
 alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 
-alias fetch="python ~/.dotfiles/fetch.py"
+alias fetch="python ~/.dotfiles/scripts/fetch.py"
 
 if is_command_present eza; then
   alias ls="eza -lh --all --group-directories-first --sort=name --time-style=long-iso --git --icons"
