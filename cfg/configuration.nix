@@ -53,6 +53,7 @@
 
   environment.systemPackages = with pkgs; [
      git
+     bash
      zsh
      oh-my-zsh
      btop

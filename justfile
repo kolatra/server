@@ -31,9 +31,6 @@ setup-gtnh:
     unzip /tmp/archive.zip -d ./gt
 
     mv ./gt/startserver-java9.sh ./gt/start.sh
-    # trying to get past Nix not including bash and not 
-    # wanting to declare it in the config
-    sed -i '1s|^#!.*|#!/bin/sh|' ./gt/start.sh
     chmod a+x ./gt/start.sh
 
     sudo mv ./gt/* /var/lib/mc-gtnh
