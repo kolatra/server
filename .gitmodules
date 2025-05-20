@@ -1,6 +1,0 @@
-[submodule "dotfiles/kickstart.nvim"]
-	path = dotfiles/kickstart.nvim
-	url = https://github.com/kolatra/kickstart.nvim
-[submodule "dotfiles/oh-my-zsh"]
-	path = dotfiles/oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh
