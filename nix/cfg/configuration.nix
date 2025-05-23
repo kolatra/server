@@ -10,7 +10,6 @@
       ./hardware-configuration.nix
       ./users.nix
       ./ssh.nix
-      ./de.nix
       ./minecraft.nix
       ./samba.nix
       ./restic.nix
